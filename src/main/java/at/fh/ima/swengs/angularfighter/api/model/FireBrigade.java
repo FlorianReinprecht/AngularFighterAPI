@@ -1,6 +1,5 @@
 package at.fh.ima.swengs.angularfighter.api.model;
 
-
 import javax.persistence.*;
 
 
@@ -27,6 +26,7 @@ public class FireBrigade {
     
     @Version
 	long version;
+
 
     public FireBrigade() {
     	
