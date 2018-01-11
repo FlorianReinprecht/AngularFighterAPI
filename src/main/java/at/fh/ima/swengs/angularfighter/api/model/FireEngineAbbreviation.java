@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="FireEngineAbbreaviation")
+@Table(name="FireEngineAbbreviation")
 public class FireEngineAbbreviation {
 	
 	
