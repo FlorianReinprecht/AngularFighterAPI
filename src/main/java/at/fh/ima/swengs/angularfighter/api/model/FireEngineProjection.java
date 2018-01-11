@@ -6,6 +6,7 @@ import java.util.Set;
 
 @Projection(name = "all" , types = FireEngine.class)
 public interface FireEngineProjection {
+    Long getId();
     String getModel();
     String getLicensePlate();
     String getPerformance();
@@ -13,5 +14,5 @@ public interface FireEngineProjection {
     Boolean getActive();
     Set<FireEngineAbbreviation> getAbbreviation();
     Set<FireBrigade> getFireBrigade();
-    
+
 }
