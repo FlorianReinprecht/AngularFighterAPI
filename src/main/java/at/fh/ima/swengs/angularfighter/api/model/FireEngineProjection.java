@@ -12,7 +12,7 @@ public interface FireEngineProjection {
     String getPerformance();
     String getBuildYear();
     Boolean getActive();
-    Set<FireEngineAbbreviation> getAbbreviation();
-    Set<FireBrigade> getFireBrigade();
+    FireEngineAbbreviation getAbbreviation();
+    FireBrigade getFireBrigade();
 
 }
