@@ -6,11 +6,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @RepositoryRestResource
 
-public interface RankRepository extends PagingAndSortingRepository<Rank, Integer> {
+public interface RankRepository extends PagingAndSortingRepository<Rank, Long> {
 
 	@Transactional
     Rank findByAbbreviation(String abbreviation);
 
-	public Rank findById(int id);
+	public Rank findById(long id);
 
 }
