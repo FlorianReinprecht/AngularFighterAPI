@@ -10,59 +10,59 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="FireFighter")
 public class FireFighter {
-	
-	
+
+
 	@Id
 	@Column(name = "FireFighterID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@Column(length = 30)
 	private String title;
-	
+
 	@Column(nullable = false, length = 30)
 	private String surname;
-	
+
 	@Column(nullable = false, length = 30)
-    private String name;
-    
+	private String name;
+
 	@ManyToOne
 	private Rank rank;
-    
-    @ManyToOne
+
+	@ManyToOne
 	private FireBrigade fireBrigade;
-    
-    @ManyToOne
+
+	@ManyToOne
 	private FireFighterStatus fireFighterStatus;
-     
+
 	@Column(name = "streetName", nullable = false, length = 45)
-    private String streetName;
-    
+	private String streetName;
+
 	@Column(name = "postalCode", nullable = false, length = 8)
-    private String postalCode; 
+	private String postalCode;
 
 	@Column(name = "postTown", nullable = false, length = 45)
-    private String postTown;
-    
+	private String postTown;
+
 	@Column(name = "gender", nullable = false, length = 1)
-    private String gender;
+	private String gender;
 
 	@Column(name = "dayOfBirth", nullable = false, length = 10)
 	private String dayOfBirth;
-	
+
 	//@Temporal(TemporalType.DATE)
 	//@Column(name = "dayOfBirth", nullable = false)
 	//@DateTimeFormat(pattern = "dd.MM.yyyy")
 	//private Calendar dayOfBirth;
-	
-	@OneToOne(cascade = CascadeType.ALL)
-    
-    @Version
-	long version;
-    
 
-    public FireFighter() {
-    }
+	@OneToOne(cascade = CascadeType.ALL)
+
+	@Version
+	long version;
+
+
+	public FireFighter() {
+	}
 
 	public FireFighter(String title, String surname, String name, Rank rank,
 					   FireBrigade fireBrigade, FireFighterStatus fireFighterStatus, String streetName, String postalCode, String postTown, String gender,
@@ -80,8 +80,8 @@ public class FireFighter {
 		this.gender = gender;
 		this.dayOfBirth = dayOfBirth;
 	}
-	
-	
+
+
 	public long getId() {
 		return id;
 	}
@@ -135,7 +135,7 @@ public class FireFighter {
 	public void setFireBrigade(FireBrigade fireBrigade) {
 		this.fireBrigade=fireBrigade;
 	}
-	
+
 	public FireFighterStatus getFireFighterStatus() {
 		return fireFighterStatus;
 	}
@@ -143,7 +143,7 @@ public class FireFighter {
 	public void setFireFighterStatus(FireFighterStatus fireFighterStatus) {
 		this.fireFighterStatus=fireFighterStatus;
 	}
-	
+
 	public String getStreetName() {
 		return streetName;
 	}
@@ -197,10 +197,10 @@ public class FireFighter {
 				+ streetName + ", postalCode=" + postalCode + ", postTown=" + postTown + ", gender=" + gender
 				+ ", dayOfBirth=" + dayOfBirth + "]";
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 }
