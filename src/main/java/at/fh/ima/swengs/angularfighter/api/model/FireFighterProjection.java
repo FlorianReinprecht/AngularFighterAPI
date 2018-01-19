@@ -9,5 +9,8 @@ public interface FireFighterProjection {
     String getSurname();
     String getName();
     FireBrigade getFireBrigade();
+    FireFighterStatus getFireFighterStatus();
+    Rank getRank();
+
 
 }
