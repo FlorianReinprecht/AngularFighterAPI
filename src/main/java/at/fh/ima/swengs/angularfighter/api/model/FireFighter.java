@@ -46,11 +46,14 @@ public class FireFighter {
     
 	@Column(name = "gender", nullable = false, length = 1)
     private String gender;
+
+	@Column(name = "dayOfBirth", nullable = false, length = 10)
+	private String dayOfBirth;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name = "dayOfBirth", nullable = false)
-	@DateTimeFormat(pattern = "dd.MM.yyyy")
-	private Calendar dayOfBirth;   
+	//@Temporal(TemporalType.DATE)
+	//@Column(name = "dayOfBirth", nullable = false)
+	//@DateTimeFormat(pattern = "dd.MM.yyyy")
+	//private Calendar dayOfBirth;
 	
 	@OneToOne(cascade = CascadeType.ALL)
     
@@ -63,7 +66,7 @@ public class FireFighter {
 
 	public FireFighter(String title, String surname, String name, Rank rank,
 					   FireBrigade fireBrigade, FireFighterStatus fireFighterStatus, String streetName, String postalCode, String postTown, String gender,
-					   Calendar dayOfBirth) {
+					   String dayOfBirth) {
 		super();
 		this.title = title;
 		this.surname = surname;
@@ -177,12 +180,12 @@ public class FireFighter {
 		this.gender = gender;
 	}
 
-	public Calendar getDayOfBirth() {
+	public String getDayOfBirth() {
 		return dayOfBirth;
 	}
 
 
-	public void setDayOfBirth(Calendar dayOfBirth) {
+	public void setDayOfBirth(String dayOfBirth) {
 		this.dayOfBirth = dayOfBirth;
 	}
 
