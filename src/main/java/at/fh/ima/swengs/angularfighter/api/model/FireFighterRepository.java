@@ -15,19 +15,20 @@ public interface FireFighterRepository extends PagingAndSortingRepository<FireFi
 	@Transactional
 	public List<FireFighter>findBySurname(String surName);
 	public List<FireFighter>findByFireBrigade(FireBrigade fireBrigade);
-	public List<FireFighter>findByFireBrigade_Id(int id);
+	public List<FireFighter>findByFireBrigade_Id(@Param("id")  long id);
 	public List<FireFighter>findByName(String name);
 	public List<FireFighter>findByRank_Abbreviation(String rank);
 	public List<FireFighter>findByFireFighterStatus_Description(String status);
-	public List<FireFighter>findByStreetName(String streetName);
-	public List<FireFighter>findByPostalCode(String postalCode);
-	public List<FireFighter>findByPostTown(String postTown);
 	public List<FireFighter>findByGender(String gender);
 	public List<FireFighter>findByNameContainingOrSurnameContainingAllIgnoreCase(String name, String surname);
 	public List<FireFighter>findByFireBrigade_Name(String fireBrigade);
 	public List<FireFighter>findBySurnameContainingAllIgnoreCase(String surname);
 	public List<FireFighter>findByNameContainingAllIgnoreCase(String name);
-	
+/*
+	public List<FireFighter>findByStreetName(String streetName);
+	public List<FireFighter>findByPostalCode(String postalCode);
+	public List<FireFighter>findByPostTown(String postTown);
+*/
 	@Query("select e from FireFighter e where e.surname = :name or e.name = :name")
 	public List<FireFighter> findByWhateverName(@Param("name") String searchString);
 	
@@ -40,7 +41,5 @@ public interface FireFighterRepository extends PagingAndSortingRepository<FireFi
 	
 	@Query(value = "SELECT count(*) as count, ff.fireBrigade_FireBrigadeID FROM FireFighter as ff GROUP BY ff.fireBrigade_FireBrigadeID ORDER BY count DESC LIMIT 5", nativeQuery=true)
 	public List<Object[]>groupByFireBrigade();
-	
-	
-			
+
 }
