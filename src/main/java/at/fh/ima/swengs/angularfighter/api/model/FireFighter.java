@@ -64,7 +64,7 @@ public class FireFighter {
 
 	public FireFighter(String title, String surname, String name, String gender, String dayOfBirth,
 					   Rank rank, FireBrigade fireBrigade, FireFighterStatus fireFighterStatus
-					   //,FireBrigade streetName, FireBrigade postalCode, FireBrigade postTown,
+					   ,String streetName, String postalCode, String postTown
 					   ) {
 		super();
 		this.title = title;
