@@ -10,6 +10,9 @@ public interface FireFighterProjection {
     String getSurname();
     String getName();
     String getDayOfBirth();
+    String getStreetName();
+    String getPostalCode();
+    String getPostTown();
     FireBrigade getFireBrigade();
     FireFighterStatus getFireFighterStatus();
     Rank getRank();

@@ -29,6 +29,15 @@ public class FireFighter {
 	@Column(name = "dayOfBirth", nullable = false, length = 10)
 	private String dayOfBirth;
 
+	@Column(name = "streetName", nullable = false, length = 45)
+	private String streetName;
+
+	@Column(name = "postalCode", nullable = false, length = 8)
+	private String postalCode;
+
+	@Column(name = "postTown", nullable = false, length = 45)
+	private String postTown;
+
 	@ManyToOne
 	private Rank rank;
 
@@ -38,16 +47,6 @@ public class FireFighter {
 	@ManyToOne
 	private FireFighterStatus fireFighterStatus;
 
-/*
-	@Column(name = "streetName", nullable = false, length = 45)
-	private FireBrigade streetName;
-
-	@Column(name = "postalCode", nullable = false, length = 8)
-	private FireBrigade postalCode;
-
-	@Column(name = "postTown", nullable = false, length = 45)
-	private FireBrigade postTown;
-*/
 
 	//@Temporal(TemporalType.DATE)
 	//@Column(name = "dayOfBirth", nullable = false)
@@ -77,11 +76,9 @@ public class FireFighter {
 		this.rank = rank;
 		this.fireBrigade = fireBrigade;
 		this.fireFighterStatus = fireFighterStatus;
-/*
 		this.streetName = streetName;
 		this.postalCode = postalCode;
 		this.postTown = postTown;
-*/
 	}
 
 
@@ -133,6 +130,29 @@ public class FireFighter {
 		this.dayOfBirth = dayOfBirth;
 	}
 
+	public String getStreetName() {
+		return streetName;
+	}
+
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+
+	public String getPostTown() {
+		return postTown;
+	}
+
+	public void setPostTown(String postTown) {
+		this.postTown = postTown;
+	}
 
 	public Rank getRank() {
 		return rank;
@@ -158,31 +178,6 @@ public class FireFighter {
 		this.fireFighterStatus=fireFighterStatus;
 	}
 
-/*
-	public FireBrigade getStreetName() {
-		return streetName;
-	}
-
-	public void setStreetName(FireBrigade streetName) {
-		this.streetName = streetName;
-	}
-
-	public FireBrigade getPostalCode() {
-		return postalCode;
-	}
-
-	public void setPostalCode(FireBrigade postalCode) {
-		this.postalCode = postalCode;
-	}
-
-	public FireBrigade getPostTown() {
-		return postTown;
-	}
-
-	public void setPostTown(FireBrigade postTown) {
-		this.postTown = postTown;
-	}
-*/
 
 /*
 	@Override
