@@ -13,10 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 public interface FireFighterRepository extends PagingAndSortingRepository<FireFighter, Long> {
 
 	@Transactional
-	public List<FireFighter>findBySurname(String surName);
 	public List<FireFighter>findByFireBrigade(FireBrigade fireBrigade);
 	public List<FireFighter>findByFireBrigade_Id(@Param("id")  long id);
-	public List<FireFighter>findByName(String name);
+
+	public List<FireFighter>findByName(@Param("name")  String name);
+	public List<FireFighter>findBySurname(@Param("surname")  String surname);
+	public List<FireFighter>findByFireFighterStatus_id(@Param("status")  long statusId);
+
 	public List<FireFighter>findByRank_Abbreviation(String rank);
 	public List<FireFighter>findByFireFighterStatus_Description(String status);
 	public List<FireFighter>findByGender(String gender);
