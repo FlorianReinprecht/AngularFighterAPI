@@ -44,6 +44,8 @@ public interface FireFighterRepository extends PagingAndSortingRepository<FireFi
 
 	public int countByFireFighterStatus_Description(@Param("status")String status);
 
+	//public int countByFireBrigade_Id(@Param("fireBrigade")long fireBrigade);
+
 	@Query(value = "SELECT count(*) as count, ff.fireBrigade_FireBrigadeID FROM FireFighter as ff GROUP BY ff.fireBrigade_FireBrigadeID ORDER BY count DESC LIMIT 5", nativeQuery=true)
 	public List<Object[]>groupByFireBrigade();
 

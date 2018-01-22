@@ -15,6 +15,6 @@ public interface RankRepository extends PagingAndSortingRepository<Rank, Long> {
     //Rank findByAbbreviation(String abbreviation);
 
 	public Rank findById(long id);
-	public List<Rank> findByAbbreviationContaining(@Param("abbreviation")  String abbreviation);
-	public List<Rank> findByDescriptionContaining(@Param("description")  String description);
+	public List<Rank> findByAbbreviationContaining(@Param("abbreviation") String abbreviation);
+	public List<Rank> findByDescriptionContaining(@Param("description") String description);
 }
